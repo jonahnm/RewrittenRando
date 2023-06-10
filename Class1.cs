@@ -382,7 +382,7 @@ namespace RewrittenRando
                     currentrandompool = keys.Zip(vals, (k, v) => new { k, v }).ToDictionary(x => x.k, x => x.v);
                     var newvehiclekeys = Shuffler<TechType>.Shuffle(vehiclekeys);
                     vehiclepool = newvehiclekeys.ToList().Zip(vehiclevals, (k, v) => new { k, v }).ToDictionary(x => x.k, x => x.v);
-                    var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\SNcheatsheet.txt";
+                    var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "SNcheatsheet.txt");
                     using (var fs = new FileStream(path, FileMode.Create))
                     {
                         using (TextWriter tw = new StreamWriter(fs))
