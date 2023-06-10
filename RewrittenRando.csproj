@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <LangVersion>latest</LangVersion>
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Core" Version="5.4.21" />
+    <PackageReference Include="Subnautica.GameLibs" Version="71288.0.0-r.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Nautilus">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Subnautica\BepInEx\plugins\Nautilus\Nautilus.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\jonahnm\OhThePlacesYoullGo1\refasm\UnityEngine.refasm.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\jonahnm\OhThePlacesYoullGo1\refasm\UnityEngine.CoreModule.refasm.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>refasm\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>refasm\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>refasm\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="UniTask\Runtime\External\TextMeshPro\TextMeshProAsyncExtensions.InputField.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TextMeshProAsyncExtensions.InputField.cs</LastGenOutput>
+    </None>
+    <None Update="UniTask\Runtime\Linq\Average.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="UniTask\Runtime\Linq\CombineLatest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="UniTask\Runtime\Linq\MinMax.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="UniTask\Runtime\Linq\Sum.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="UniTask\Runtime\Triggers\MonoBehaviourMessagesTriggers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="UniTask\Runtime\UniTask.WhenAll.Generated.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="UniTask\Runtime\UniTask.WhenAny.Generated.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="UniTask\Runtime\UniTaskExtensions.Shorthand.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="UniTask\Runtime\UnityAsyncExtensions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="UniTask\Runtime\External\TextMeshPro\TextMeshProAsyncExtensions.InputField.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TextMeshProAsyncExtensions.InputField.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="refasm\" />
+  </ItemGroup>
+
+</Project>
