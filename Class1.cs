@@ -369,7 +369,7 @@ namespace RewrittenRando
             data.OnFinishedLoading += (object sender, JsonFileEventArgs e) =>
             {
                 var randodata = e.Instance as DropRandomizerData;
-                if (data.hassavedinsave)
+                if (randodata.hassavedinsave)
                 {
                     currentrandompool = randodata.randompool;
                     vehiclepool = randodata.randomvehicles;
